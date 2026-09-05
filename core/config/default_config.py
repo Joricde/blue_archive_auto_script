@@ -3543,7 +3543,7 @@ STATIC_DEFAULT_CONFIG = '''
     },
     "current_game_activity": {
         "CN": "PandemicHazardAMiraclePancake",
-        "Global": "SecretMidnightParty",
+        "Global": "PlayBallAimforaGrandSlamHomeRun",
         "JP": "HighlanderRailroadExplosionIncident"
     },
     "dailyGameActivity": {
