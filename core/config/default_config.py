@@ -383,6 +383,7 @@ DEFAULT_CONFIG = """
     "push_json":"",
     "push_serverchan":"",
     "push_feishu": "",
+    "push_wecom": "",
     "cafe_reward_affection_pat_round": 4,
     "cafe_reward_lowest_affection_first": true,
     "cafe_reward_invite1_criterion" : "starred",
@@ -713,13 +714,13 @@ STATIC_DEFAULT_CONFIG = '''
             ["宫子神明文字x5", 50], ["静子神明文字x5",50], ["真白神明文字x5",50], ["纱绫神明文字x5",50],
             ["风香神明文字x5",50], ["歌原神明文字x5",50], ["30AP", 15], ["60AP", 30],
             ["初级经验书x5", 5], ["中级经验书x10", 25], ["高级经验书x3", 60], ["特级经验书x1", 100],
-            ["信用点x5k", 4], ["信用点x5k", 20],["信用点x75k", 60],["信用点x125k", 10]
+            ["信用点x5k", 4], ["信用点x5k", 20],["信用点x75k", 60],["信用点x125k", 100]
         ],
         "Global": [
              ["宫子神明文字x5",50],["静子神明文字x5",50],["真白神明文字x5",50],["纱绫神明文字x5",50],
              ["风香神明文字x5",50],["歌原神明文字x5",50],["30AP", 15],["60AP", 30],
              ["初级经验书x5", 5],["中级经验书x10", 25],["高级经验书x3", 60],["特级经验书x1", 100],
-             ["信用点x5k", 4],["信用点x5k", 20],["信用点x75k", 60],["信用点x125k", 10]
+             ["信用点x5k", 4],["信用点x5k", 20],["信用点x75k", 60],["信用点x125k", 100]
         ],
         "JP": [
              ["30AP", 15], ["60AP", 30], ["美游神明文字x5", 50],  ["宫子神明文字x5", 50],
@@ -1331,7 +1332,10 @@ STATIC_DEFAULT_CONFIG = '''
         "Eleph",
         "Coin",
         "Material",
-        "Gift"
+        "Disk",
+        "Note",
+        "Gift",
+        "Special"
       ],
       "Global":[
         "Equipment",
@@ -1453,7 +1457,9 @@ STATIC_DEFAULT_CONFIG = '''
             "Winnipesaukee-Stone-Piece",
             "Broken-Winnipesaukee-Stone",
             "Damage-Winnipesaukee-Stone",
-            "Intact-Winnipesaukee-Stone",
+            "Intact-Winnipesaukee-Stone"
+          ],
+          "Disk": [
             "Beginner-Tactical-Training-Blu-ray-(Hyakkiyako)",
             "Normal-Tactical-Training-Blu-ray-(Hyakkiyako)",
             "Advanced-Tactical-Training-Blu-ray-(Hyakkiyako)",
@@ -1489,7 +1495,9 @@ STATIC_DEFAULT_CONFIG = '''
             "Beginner-Tactical-Training-Blu-ray-(Valkyrie)",
             "Normal-Tactical-Training-Blu-ray-(Valkyrie)",
             "Advanced-Tactical-Training-Blu-ray-(Valkyrie)",
-            "Superior-Tactical-Training-Blu-ray-(Valkyrie)",
+            "Superior-Tactical-Training-Blu-ray-(Valkyrie)"
+          ],
+          "Note": [
             "Beginner-Tech-Notes-(Hyakkiyako)",
             "Normal-Tech-Notes-(Hyakkiyako)",
             "Advanced-Tech-Notes-(Hyakkiyako)",
@@ -3542,7 +3550,7 @@ STATIC_DEFAULT_CONFIG = '''
         ]
     },
     "current_game_activity": {
-        "CN": "PandemicHazardAMiraclePancake",
+        "CN": "FromOpera0068WithLove",
         "Global": "PlayBallAimforaGrandSlamHomeRun",
         "JP": "HighlanderRailroadExplosionIncident"
     },

@@ -26,6 +26,8 @@ def push(logger: Logger, config: Config, error: str = None):
             push_serverchan(logger, serverchan_url.format(KEY=config.push_serverchan), data)
         if config.push_feishu != '':
             push_feishu(logger, config.push_feishu, data)
+        if config.push_wecom != '':
+            push_wecom(logger, config.push_wecom, data)
 
 
 def push_json(logger: Logger, url: str, data: dict):
@@ -70,4 +72,29 @@ def push_feishu(logger: Logger, webhook_url: str, data: dict):
         else:
             logger.error(f"[ Feishu ] push HTTP error: {resp.status_code}")
     except Exception as e:
-        logger.error(f"[ Feishu ] push exception: {e.__str__()}")
+        logger.error(f"[ Feishu ] push exception: {type(e).__name__}; webhook=**")
+
+
+def push_wecom(logger: Logger, webhook_url: str, data: dict):
+    wecom_data = {
+        "msgtype": "text",
+        "text": {
+            "content": f"{data['title']}\n{data['desp']}"
+        }
+    }
+    try:
+        resp = requests.post(
+            webhook_url,
+            json=wecom_data,
+            headers={"Content-Type": "application/json"}
+        )
+        if resp.status_code == 200:
+            result = resp.json()
+            if result.get("errcode") == 0:
+                logger.info("[ WeCom ] push success")
+            else:
+                logger.error(f"[ WeCom ] push failed: {result.get('errmsg', 'unknown error')}")
+        else:
+            logger.error(f"[ WeCom ] push HTTP error: {resp.status_code}")
+    except Exception as e:
+        logger.error(f"[ WeCom ] push exception: {type(e).__name__}; webhook=**")
